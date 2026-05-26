@@ -685,17 +685,12 @@ address { font-style: normal; }
   color: rgba(255,255,255,0.35);
 }
 
-/* Website credit — inside contact section */
+/* Website credit — inside contact grid */
 .website-credit {
-  margin-top: 48px;
-  padding: 28px 32px;
+  padding: 24px;
   border: 1px solid rgba(0,0,0,0.1);
   border-radius: 10px;
-  text-align: center;
   background: var(--clr-white);
-  max-width: 380px;
-  margin-left: auto;
-  margin-right: auto;
 }
 .website-credit-heading {
   font-family: var(--ff-heading);
@@ -920,10 +915,10 @@ address { font-style: normal; }
     grid-template-columns: repeat(4, 1fr);
   }
 
-  /* Contact — 3 columns */
+  /* Contact — 4 columns */
   .contact-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 48px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
   }
 }
 
