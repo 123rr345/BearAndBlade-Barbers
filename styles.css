@@ -685,44 +685,46 @@ address { font-style: normal; }
   color: rgba(255,255,255,0.35);
 }
 
-/* Footer credit card */
-.footer-credit {
-  margin-top: 28px;
-  padding: 24px 28px;
-  border: 1px solid rgba(255,255,255,0.12);
+/* Website credit — inside contact section */
+.website-credit {
+  margin-top: 48px;
+  padding: 28px 32px;
+  border: 1px solid rgba(0,0,0,0.1);
   border-radius: 10px;
-  display: inline-block;
   text-align: center;
-  background: rgba(255,255,255,0.04);
+  background: var(--clr-white);
+  max-width: 380px;
+  margin-left: auto;
+  margin-right: auto;
 }
-.footer-credit-heading {
+.website-credit-heading {
   font-family: var(--ff-heading);
   font-size: 1rem;
-  color: rgba(255,255,255,0.55);
+  color: rgba(0,0,0,0.45);
   margin-bottom: 4px;
 }
-.footer-credit-name {
+.website-credit-name {
   font-family: var(--ff-heading);
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   font-weight: 700;
-  color: var(--clr-white);
-  margin-bottom: 8px;
+  color: var(--clr-dark);
+  margin-bottom: 10px;
 }
-.footer-credit-cta {
+.website-credit-cta {
   font-size: 0.82rem;
-  color: rgba(255,255,255,0.45);
+  color: rgba(0,0,0,0.45);
   line-height: 1.5;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
-.footer-credit-email {
-  font-size: 0.85rem;
-  color: var(--clr-gold);
+.website-credit-email {
+  font-size: 0.88rem;
+  color: var(--clr-primary);
   text-decoration: none;
   font-weight: 600;
   transition: color 0.2s;
 }
-.footer-credit-email:hover {
-  color: var(--clr-white);
+.website-credit-email:hover {
+  color: var(--clr-gold);
 }
 
 /* ============================================
