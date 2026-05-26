@@ -204,9 +204,10 @@
      SCROLL REVEAL — IntersectionObserver
      ============================================ */
   var reveals = document.querySelectorAll('.reveal');
+  var io;
 
   if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function (entries) {
+    io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
@@ -222,6 +223,47 @@
   } else {
     /* Fallback — show everything */
     reveals.forEach(function (el) { el.classList.add('visible'); });
+  }
+
+  /* ============================================
+     GALLERY — Show More / Show Less toggle
+     ============================================ */
+  var galleryGrid   = document.querySelector('.gallery-grid');
+  var galleryBtn    = document.getElementById('gallery-toggle');
+
+  if (galleryBtn && galleryGrid) {
+    galleryBtn.addEventListener('click', function () {
+      var expanded = galleryGrid.classList.toggle('gallery-expanded');
+      galleryBtn.setAttribute('aria-expanded', expanded);
+      galleryBtn.textContent = '';
+
+      /* Rebuild button content */
+      var label = document.createTextNode(expanded ? 'Show Less' : 'Show More');
+      var arrow = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      arrow.setAttribute('class', 'gallery-toggle-arrow');
+      arrow.setAttribute('viewBox', '0 0 24 24');
+      arrow.setAttribute('width', '18');
+      arrow.setAttribute('height', '18');
+      arrow.setAttribute('fill', 'none');
+      arrow.setAttribute('stroke', 'currentColor');
+      arrow.setAttribute('stroke-width', '2.5');
+      arrow.setAttribute('stroke-linecap', 'round');
+      arrow.setAttribute('stroke-linejoin', 'round');
+      var poly = document.createElementNS('http://www.w3.org/2000/svg', 'polyline');
+      poly.setAttribute('points', '6 9 12 15 18 9');
+      arrow.appendChild(poly);
+      galleryBtn.appendChild(label);
+      galleryBtn.appendChild(arrow);
+
+      /* If expanding, observe newly-visible items for reveal animation */
+      if (expanded && io) {
+        document.querySelectorAll('.gallery-hidden').forEach(function (el) {
+          if (!el.classList.contains('visible')) {
+            io.observe(el);
+          }
+        });
+      }
+    });
   }
 
 })();

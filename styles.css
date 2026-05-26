@@ -685,6 +685,80 @@ address { font-style: normal; }
   color: rgba(255,255,255,0.35);
 }
 
+/* Footer credit card */
+.footer-credit {
+  margin-top: 28px;
+  padding: 24px 28px;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 10px;
+  display: inline-block;
+  text-align: center;
+  background: rgba(255,255,255,0.04);
+}
+.footer-credit-heading {
+  font-family: var(--ff-heading);
+  font-size: 1rem;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 4px;
+}
+.footer-credit-name {
+  font-family: var(--ff-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--clr-white);
+  margin-bottom: 8px;
+}
+.footer-credit-cta {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+.footer-credit-email {
+  font-size: 0.85rem;
+  color: var(--clr-gold);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+.footer-credit-email:hover {
+  color: var(--clr-white);
+}
+
+/* ============================================
+   GALLERY — Show More toggle
+   ============================================ */
+.gallery-hidden {
+  display: none !important;
+}
+.gallery-grid.gallery-expanded .gallery-hidden {
+  display: block !important;
+}
+
+.gallery-more-wrap {
+  text-align: center;
+  margin-top: 32px;
+}
+
+.gallery-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--ff-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 14px 36px;
+  cursor: pointer;
+}
+.gallery-toggle-arrow {
+  transition: transform 0.35s ease;
+}
+.gallery-toggle[aria-expanded="true"] .gallery-toggle-arrow {
+  transform: rotate(180deg);
+}
+
 /* ============================================
    LIGHTBOX
    ============================================ */
