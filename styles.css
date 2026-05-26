@@ -688,9 +688,10 @@ address { font-style: normal; }
 /* Website credit — inside contact grid */
 .website-credit {
   padding: 24px;
-  border: 1px solid rgba(0,0,0,0.1);
+  border: 1px solid var(--clr-gold);
   border-radius: 10px;
   background: var(--clr-white);
+  align-self: start;
 }
 .website-credit-heading {
   font-family: var(--ff-heading);
@@ -888,6 +889,9 @@ address { font-style: normal; }
   .contact-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+  .contact-grid .website-credit {
+    justify-self: start;
+  }
 }
 
 /* 968px — tablets / small desktops */
@@ -915,10 +919,13 @@ address { font-style: normal; }
     grid-template-columns: repeat(4, 1fr);
   }
 
-  /* Contact — 4 columns */
+  /* Contact — 3 main columns + narrower credit column */
   .contact-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 1fr 1fr 1fr auto;
     gap: 40px;
+  }
+  .contact-grid .website-credit {
+    min-width: 220px;
   }
 }
 
