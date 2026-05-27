@@ -749,6 +749,16 @@ address { font-style: normal; }
   text-transform: uppercase;
   padding: 14px 36px;
   cursor: pointer;
+  background: var(--clr-primary);
+  color: var(--clr-white);
+  border: 2px solid var(--clr-primary);
+  border-radius: 4px;
+}
+.gallery-toggle:hover,
+.gallery-toggle:focus-visible {
+  background: var(--clr-dark);
+  border-color: var(--clr-dark);
+  transform: translateY(-2px);
 }
 .gallery-toggle-arrow {
   transition: transform 0.35s ease;
